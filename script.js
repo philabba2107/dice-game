@@ -1,14 +1,13 @@
-// Generate random numbers between 1 and 6 for both dice
-let randomNumber1 = Math.floor(Math.random() * 6) + 1;
-let randomNumber2 = Math.floor(Math.random() * 6) + 1;
+// Generate random dice numbers
+const randomNumber1 = Math.floor(Math.random() * 6) + 1;
+const randomNumber2 = Math.floor(Math.random() * 6) + 1;
 
-// Set dice images
+// Update dice images
 document.querySelector(".img1").setAttribute("src", "images/dice" + randomNumber1 + ".png");
 document.querySelector(".img2").setAttribute("src", "images/dice" + randomNumber2 + ".png");
 
-// Determine the winner
+// Determine winner text
 let resultText = "";
-
 if (randomNumber1 > randomNumber2) {
   resultText = "🚩 Player 1 Wins!";
 } else if (randomNumber2 > randomNumber1) {
@@ -17,4 +16,5 @@ if (randomNumber1 > randomNumber2) {
   resultText = "Draw!";
 }
 
+// Update heading
 document.querySelector("#result").textContent = resultText;
